@@ -3,7 +3,6 @@ package higherlowerlolchamp.backend.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,9 +22,9 @@ public class HigherLowerLoLController {
     ChampionRepository championRepository;
 
     @GetMapping("/champions")
-    public ResponseEntity<List<Champion>> getAllChampions() {
+    public ResponseEntity<ArrayList<Champion>> getAllChampions() {
         try {
-            List<Champion> champions = new ArrayList<Champion>();
+            ArrayList<Champion> champions = new ArrayList<Champion>();
             championRepository.getAllChampions().forEach(champions::add);
             Collections.sort(champions, Comparator.comparing(Champion::getChampionName));
             return new ResponseEntity<>(champions, HttpStatus.OK);
