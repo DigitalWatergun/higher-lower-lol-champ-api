@@ -18,7 +18,9 @@ public class BackendApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/champions").allowedOrigins("http://localhost:3000");
+                registry.addMapping("/api/champions").allowedOrigins(
+                        "https://digitalwatergun.github.io/higher-lower-lol-champ-web/",
+                        "http://localhost:3000");
 			}
         };
     }
