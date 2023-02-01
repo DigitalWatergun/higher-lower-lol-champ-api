@@ -19,7 +19,7 @@ public class BackendApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/champions").allowedOrigins(
-                        "https://digitalwatergun.github.io/higher-lower-lol-champ-web/",
+                        "https://digitalwatergun.github.io/",
                         "http://localhost:3000");
 			}
         };
